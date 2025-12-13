@@ -251,6 +251,30 @@ header nav .container {
     overflow-wrap: break-word;
 }
 
+/* Tool Panels Wrapper with AMP Ads */
+.tool-panels-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    align-items: center;
+}
+
+.tool-panel-ad {
+    display: none;
+    width: 300px;
+    flex-shrink: 0;
+    padding: 1rem;
+}
+
+.tool-panel-ad-left {
+    order: 0;
+}
+
+.tool-panel-ad-right {
+    order: 2;
+}
+
 /* Tool Panels */
 .tool-panels {
     position: relative;
@@ -258,6 +282,9 @@ header nav .container {
     max-width: 100%;
     box-sizing: border-box;
     overflow-x: hidden;
+    order: 1;
+    flex: 1;
+    min-width: 0;
 }
 
 .tool-card {
@@ -1266,6 +1293,32 @@ footer p {
 
     .file-label {
         padding: 2rem;
+    }
+
+    /* Show tool panel AMP ads on larger screens */
+    .tool-panels-wrapper {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 2rem;
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    
+    .tool-panel-ad {
+        display: flex;
+        position: sticky;
+        top: 100px;
+        align-items: flex-start;
+        justify-content: center;
+        height: fit-content;
+    }
+    
+    .tool-panels {
+        flex: 0 1 700px;
+        max-width: 700px;
+        min-width: 0;
     }
 
     .content-section article {

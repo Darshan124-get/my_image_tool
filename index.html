@@ -33,6 +33,16 @@
     <!-- Preload Critical Resources -->
     <link rel="preload" href="style.css" as="style">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MVCB8XCH39"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MVCB8XCH39');
+</script>
     
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -133,6 +143,7 @@
       ]
     }
     </script>
+    <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
 </head>
 <body>
     <header>
@@ -183,10 +194,22 @@
                     </button>
                 </div>
 
-                <!-- Tool Panels -->
-                <div class="tool-panels">
-                    <!-- PDF to Image Tool -->
-                    <article class="tool-card active" id="pdf-tool" role="tabpanel" aria-labelledby="pdf-tab">
+                <!-- Tool Panels with AMP Ads -->
+                <div class="tool-panels-wrapper">
+                    <!-- Left AMP Ad -->
+                    <aside class="tool-panel-ad tool-panel-ad-left">
+                        <amp-ad width="300" height="600" 
+                             type="adsense"
+                             data-ad-client="ca-pub-5165221633271822"
+                             data-ad-slot="1738961146">
+                            <div overflow=""></div>
+                        </amp-ad>
+                    </aside>
+                    
+                    <!-- Tool Panels -->
+                    <div class="tool-panels">
+                        <!-- PDF to Image Tool -->
+                        <article class="tool-card active" id="pdf-tool" role="tabpanel" aria-labelledby="pdf-tab">
                         <div class="tool-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
@@ -384,6 +407,17 @@
 
                         <div id="compress-results" class="results-container" hidden></div>
                     </article>
+                    </div>
+                    
+                    <!-- Right AMP Ad -->
+                    <aside class="tool-panel-ad tool-panel-ad-right">
+                        <amp-ad width="300" height="600" 
+                             type="adsense"
+                             data-ad-client="ca-pub-5165221633271822"
+                             data-ad-slot="1738961146">
+                            <div overflow=""></div>
+                        </amp-ad>
+                    </aside>
                 </div>
                 </div>
             </div>
