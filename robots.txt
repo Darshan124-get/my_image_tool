@@ -1,13 +1,4 @@
 User-agent: *
 Allow: /
-Allow: /index.html
-Allow: /about.html
-Allow: /terms-and-policy.html
-Disallow: /assets/
 
-# Sitemap
 Sitemap: https://imglow.crafzio.in/sitemap.xml
-
-# Crawl-delay
-Crawl-delay: 1
-
