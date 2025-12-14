@@ -1,4 +1,4 @@
-# MyImageTool
+# imglow
 
 A production-ready static website offering three browser-based image processing tools: PDF to JPG/PNG conversion, image resizing, and image compression. All processing happens entirely in the user's browser — no server, no uploads, 100% private.
 
@@ -10,7 +10,7 @@ A production-ready static website offering three browser-based image processing 
 
 ## Architecture
 
-MyImageTool is a fully static website that uses:
+imglow is a fully static website that uses:
 - **pdf.js** (Mozilla) for PDF rendering to canvas
 - **Pica** for high-quality image resizing
 - **browser-image-compression** for client-side image compression

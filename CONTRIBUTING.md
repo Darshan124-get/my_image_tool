@@ -1,6 +1,6 @@
-# Contributing to MyImageTool
+# Contributing to imglow
 
-Thank you for your interest in contributing to MyImageTool! This document provides guidelines and instructions for contributing.
+Thank you for your interest in contributing to imglow! This document provides guidelines and instructions for contributing.
 
 ## Code of Conduct
 
@@ -92,5 +92,5 @@ Before submitting a PR, ensure:
 
 Feel free to open an issue for questions or clarifications.
 
-Thank you for contributing to MyImageTool!
+Thank you for contributing to imglow!
 

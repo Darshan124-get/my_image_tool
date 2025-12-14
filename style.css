@@ -80,7 +80,10 @@ header {
     width: 100%;
     max-width: 100vw;
     box-sizing: border-box;
-    overflow-x: hidden;
+}
+
+header nav {
+    overflow: visible;
 }
 
 header nav .container {
@@ -91,6 +94,8 @@ header nav .container {
     gap: 0.5rem;
     width: 100%;
     box-sizing: border-box;
+    position: relative;
+    overflow: visible;
 }
 
 .logo {
@@ -98,6 +103,84 @@ header nav .container {
     font-weight: 700;
     color: var(--primary-color);
     margin: 0;
+}
+
+/* Menu Icon and Dropdown */
+.menu-container {
+    position: relative;
+    z-index: 9999;
+}
+
+.menu-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    border-radius: var(--radius);
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.menu-icon:hover {
+    background-color: var(--bg-tertiary);
+    color: var(--primary-color);
+}
+
+.menu-icon:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.menu-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.menu-dropdown {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    min-width: 180px;
+    padding: 0.5rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+    z-index: 9999;
+    display: block;
+}
+
+.menu-dropdown.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0);
+    display: block !important;
+}
+
+.menu-item {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+    font-size: 0.9375rem;
+}
+
+.menu-item:hover {
+    background-color: var(--bg-secondary);
+    color: var(--primary-color);
+}
+
+.menu-item:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: -2px;
 }
 
 .privacy-badge {
@@ -1076,6 +1159,16 @@ footer p {
         padding: 0 0.75rem;
         width: 100%;
         box-sizing: border-box;
+    }
+
+    .menu-dropdown {
+        min-width: 160px;
+        right: 0;
+    }
+
+    .menu-item {
+        padding: 0.625rem 1rem;
+        font-size: 0.875rem;
     }
 
     .privacy-badge {

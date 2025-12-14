@@ -1,5 +1,5 @@
 /**
- * MyImageTool - Main Application
+ * imglow - Main Application
  * Wires UI events and coordinates tool modules
  */
 
@@ -466,8 +466,54 @@ function initToolTabs() {
     });
 }
 
+// Initialize menu toggle
+function initMenuToggle() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuDropdown = document.getElementById('menu-dropdown');
+    const menuContainer = menuToggle ? menuToggle.closest('.menu-container') : null;
+    
+    if (!menuToggle || !menuDropdown || !menuContainer) {
+        return;
+    }
+    
+    menuToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = menuDropdown.classList.contains('show');
+        
+        if (isOpen) {
+            menuDropdown.classList.remove('show');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuDropdown.setAttribute('aria-hidden', 'true');
+        } else {
+            menuDropdown.classList.add('show');
+            menuToggle.setAttribute('aria-expanded', 'true');
+            menuDropdown.setAttribute('aria-hidden', 'false');
+        }
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!menuContainer.contains(e.target)) {
+            menuDropdown.classList.remove('show');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuDropdown.setAttribute('aria-hidden', 'true');
+        }
+    });
+    
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && menuDropdown.classList.contains('show')) {
+            menuDropdown.classList.remove('show');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuDropdown.setAttribute('aria-hidden', 'true');
+            menuToggle.focus();
+        }
+    });
+}
+
 // Initialize all tools when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
+    initMenuToggle();
     initToolTabs();
     initPdfTool();
     initResizeTool();
